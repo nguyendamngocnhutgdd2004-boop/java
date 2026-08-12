@@ -2,22 +2,29 @@ import java.util.Scanner;
 
 public class baitap6 {
     public static void main(String[] args) {
+        // Tao doi tuong Scanner de nhap du lieu tu ban phim
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Nhap so nguyen N: ");
-        int n = scanner.nextInt();
 
-        // Neu so am thi chuyen thanh so duong
-        int soDuong = Math.abs(n);
+        // Khai bao cac bien kieu float theo dung yeu cau de bai
+        float width, height, area, circumference;
 
-        int tong = 0;
-        int temp = soDuong;
+        // Nhap chieu rong tu ban phim
+        System.out.print("Nhap chieu rong (width): ");
+        width = scanner.nextFloat();
 
-        while (temp > 0) {
-            int chuSo = temp % 10; // lay chu so cuoi cung
-            tong += chuSo;         // cong don vao tong
-            temp = temp / 10;      // bo chu so cuoi, chuan bi lay chu so tiep theo
-        }
+        // Nhap chieu cao tu ban phim
+        System.out.print("Nhap chieu cao (height): ");
+        height = scanner.nextFloat();
 
-        System.out.println("Tong cac chu so cua " + n + " la: " + tong);
+        // Tinh dien tich: area = width * height
+        area = width * height;
+
+        // Tinh chu vi: circumference = 2 * (width + height)
+        circumference = 2 * (width + height);
+
+        // In ket qua dien tich va chu vi ra man hinh (lay 2 so sau dau phay)
+        System.out.printf("Dien tich hinh chu nhat la: %.2f\n", area);
+        System.out.printf("Chu vi hinh chu nhat la: %.2f\n", circumference);
+
     }
 }
