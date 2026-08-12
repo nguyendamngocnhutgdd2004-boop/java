@@ -2,29 +2,76 @@ import java.util.Scanner;
 
 public class baitap5 {
     public static void main(String[] args) {
-        // Tao doi tuong Scanner de nhap du lieu tu ban phim
         Scanner scanner = new Scanner(System.in);
+        System.out.print("Nhap thang (1-12): ");
+        int thang = scanner.nextInt();
 
-        // Nhap phan so thu nhat (tu1/mau1)
-        System.out.print("Nhap tu so cua phan so thu nhat: ");
-        int tu1 = scanner.nextInt();
-        System.out.print("Nhap mau so cua phan so thu nhat: ");
-        int mau1 = scanner.nextInt();
+        System.out.print("Nhap nam (de kiem tra nam nhuan cho thang 2): ");
+        int nam = scanner.nextInt();
 
-        // Nhap phan so thu hai (tu2/mau2)
-        System.out.print("Nhap tu so cua phan so thu hai: ");
-        int tu2 = scanner.nextInt();
-        System.out.print("Nhap mau so cua phan so thu hai: ");
-        int mau2 = scanner.nextInt();
+        String tenThang;
+        int soNgay;
 
-        // Tinh tong hai phan so theo cong thuc quy dong
-        // Tu so moi = tu1 * mau2 + tu2 * mau1
-        // Mau so moi = mau1 * mau2
-        int tuTong = tu1 * mau2 + tu2 * mau1;
-        int mauTong = mau1 * mau2;
+        switch (thang) {
+            case 1:
+                tenThang = "Thang 1";
+                soNgay = 31;
+                break;
+            case 2:
+                tenThang = "Thang 2";
+                // kiem tra nam nhuan
+                if ((nam % 4 == 0 && nam % 100 != 0) || (nam % 400 == 0)) {
+                    soNgay = 29;
+                } else {
+                    soNgay = 28;
+                }
+                break;
+            case 3:
+                tenThang = "Thang 3";
+                soNgay = 31;
+                break;
+            case 4:
+                tenThang = "Thang 4";
+                soNgay = 30;
+                break;
+            case 5:
+                tenThang = "Thang 5";
+                soNgay = 31;
+                break;
+            case 6:
+                tenThang = "Thang 6";
+                soNgay = 30;
+                break;
+            case 7:
+                tenThang = "Thang 7";
+                soNgay = 31;
+                break;
+            case 8:
+                tenThang = "Thang 8";
+                soNgay = 31;
+                break;
+            case 9:
+                tenThang = "Thang 9";
+                soNgay = 30;
+                break;
+            case 10:
+                tenThang = "Thang 10";
+                soNgay = 31;
+                break;
+            case 11:
+                tenThang = "Thang 11";
+                soNgay = 30;
+                break;
+            case 12:
+                tenThang = "Thang 12";
+                soNgay = 31;
+                break;
+            default:
+                System.out.println("Thang khong hop le.");
+                scanner.close();
+                return; // ket thuc chuong trinh vi khong co thang hop le
+        }
 
-        // In ket qua ra man hinh duoi dang phan so (a/b)
-        System.out.printf("Tong hai phan so la: %d/%d\n", tuTong, mauTong);
-
+        System.out.println(tenThang + " co " + soNgay + " ngay.");
     }
 }
